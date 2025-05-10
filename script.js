@@ -1,45 +1,32 @@
-// Countdown Timer
-const countdownDate = new Date("June 1, 2025 10:00:00").getTime();
-const countdownElement = document.getElementById("countdown");
+function countdown(targetDate, elementId) {
+  const countDownDate = new Date(targetDate).getTime();
 
-function updateCountdown() {
+  const update = () => {
     const now = new Date().getTime();
-    const timeLeft = countdownDate - now;
+    const distance = countDownDate - now;
+    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((distance % (1000 * 60)) / 1000);
 
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    document.getElementById(elementId).innerHTML =
+      d + "h " + h + "j " + m + "m " + s + "s ";
 
-    countdownElement.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
-
-    if (timeLeft < 0) {
-        clearInterval(countdownInterval);
-        countdownElement.innerHTML = "Majlis Perkahwinan Telah Bermula!";
+    if (distance < 0) {
+      document.getElementById(elementId).innerHTML = "Hari Bahagia Telah Tiba!";
     }
+  };
+
+  update();
+  setInterval(update, 1000);
 }
 
-const countdownInterval = setInterval(updateCountdown, 1000);
+countdown("June 30, 2025 11:00:00", "countdown");
+countdown("June 30, 2025 11:00:00", "footer-countdown");
 
-// Footer Countdown Timer
-const footerCountdownDate = new Date("June 1, 2025 10:00:00").getTime();
-const footerCountdownElement = document.getElementById("footer-countdown");
-
-function updateFooterCountdown() {
-    const now = new Date().getTime();
-    const timeLeft = footerCountdownDate - now;
-
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-    footerCountdownElement.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
-
-    if (timeLeft < 0) {
-        clearInterval(footerCountdownInterval);
-        footerCountdownElement.innerHTML = "Majlis Perkahwinan Telah Bermula!";
-    }
+function flipToNext() {
+  document.querySelector('.flipbook').scrollBy({
+    left: window.innerWidth,
+    behavior: 'smooth'
+  });
 }
-
-const footerCountdownInterval = setInterval(updateFooterCountdown, 1000);
