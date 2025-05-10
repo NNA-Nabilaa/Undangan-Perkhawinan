@@ -1,6 +1,5 @@
-// Countdown to wedding date
+// Countdown Timer
 const countdownDate = new Date("June 1, 2025 10:00:00").getTime();
-
 const countdownElement = document.getElementById("countdown");
 
 function updateCountdown() {
@@ -22,8 +21,7 @@ function updateCountdown() {
 
 const countdownInterval = setInterval(updateCountdown, 1000);
 
-
-// Countdown in Footer
+// Footer Countdown Timer
 const footerCountdownDate = new Date("June 1, 2025 10:00:00").getTime();
 const footerCountdownElement = document.getElementById("footer-countdown");
 
