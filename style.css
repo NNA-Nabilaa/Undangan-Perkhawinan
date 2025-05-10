@@ -1,128 +1,66 @@
-/* Reset dan Asas */
-* {
+body {
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-body {
-  background: #fffaf8;
+  background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
   color: #333;
-  overflow-x: hidden;
 }
 
-/* Brosur wrapper */
-.brochure {
-  width: 100%;
-  min-height: 100vh;
+.flipbook {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 60px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 }
 
-/* Setiap halaman brosur */
 .page {
-  width: 90%;
-  max-width: 800px;
-  padding: 40px 20px;
-  background: #fff;
-  margin: 20px 0;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  animation: fadeIn 1.2s ease-in-out;
-  position: relative;
-}
-
-/* Header Page (tajuk) */
-.page h1, .page h2 {
+  min-width: 100vw;
+  padding: 2rem;
+  box-sizing: border-box;
+  scroll-snap-align: center;
   text-align: center;
-  margin-bottom: 20px;
-  color: #8d5b4c;
-}
-
-.page p {
-  text-align: center;
-  font-size: 1.1em;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-/* Gambar pasangan */
-.page img {
-  display: block;
-  margin: 20px auto;
-  max-width: 250px;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-/* Countdown */
-.countdown {
-  font-size: 1.5em;
-  color: #d85a7f;
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* RSVP */
-.rsvp-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.rsvp-form input,
-.rsvp-form textarea {
-  padding: 10px;
-  margin: 10px 0;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 6px;
+  background: white;
   border: 1px solid #ccc;
-  font-size: 1em;
 }
 
-.rsvp-form button {
-  background-color: #8d5b4c;
+.front-page {
+  background: url('background.jpg') no-repeat center center/cover;
+  color: #fff;
+}
+
+#countdown, #footer-countdown {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+button {
+  background-color: #d36b7d;
   color: white;
   padding: 10px 20px;
-  font-size: 1em;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: 0.3s;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
-.rsvp-form button:hover {
-  background-color: #a76d5c;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: auto;
 }
 
-/* Footer */
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #fceeee;
+input, textarea {
   padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+footer {
   text-align: center;
-  font-size: 0.9em;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-}
-
-footer a {
-  color: #8d5b4c;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Animasi */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
+  padding: 1rem;
+  background: #f8f8f8;
+  position: relative;
 }
