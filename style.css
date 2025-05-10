@@ -1,178 +1,72 @@
-/* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+    color: #2c3e50;
 }
 
-h1, h2, p {
-    text-align: center;
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
+    color: #2c3e50;
 }
 
-section.hero {
-    background-image: url('wedding-background.jpg'); /* Gambar latar belakang majlis */
-    background-size: cover;
-    color: white;
-    padding: 50px;
-}
-
-section.hero h1 {
-    font-size: 3em;
-    margin: 0;
-}
-
-section.hero p {
-    font-size: 1.5em;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #2c3e50;
-    color: white;
-    padding: 30px 20px;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.footer-content {
-    margin-bottom: 20px;
-}
-
-.footer-content a {
-    color: white;
-    text-decoration: none;
-    margin: 10px;
-    font-size: 1.2em;
-}
-
-.footer-countdown {
-    font-size: 1.5em;
-    color: #e74c3c;
-}
-
-.whatsapp {
-    background-color: #25D366;
-    color: white;
+button {
     padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.2em;
-    margin-top: 10px;
-}
-
-/* Page Kedua: Ucapan Jemputan & Maklumat Majlis */
-.invitation {
-    background-color: #ffffff;
-    padding: 30px;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.invitation h2 {
-    font-size: 2.5em;
-    color: #2c3e50;
-}
-
-.invitation h3 {
-    font-size: 2em;
-    margin: 20px 0;
-}
-
-.invitation p, .invitation ul {
-    font-size: 1.2em;
-    color: #7f8c8d;
-}
-
-.invitation ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.invitation ul li {
-    margin: 10px 0;
-}
-
-/* Page Ketiga: Gambar Pasangan & Doa Untuk Pengantin */
-.couple {
-    background-color: #f0f0f0;
-    padding: 30px;
-    margin: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.couple h2 {
-    font-size: 2.5em;
-    color: #2c3e50;
-}
-
-.couple-images {
-    margin: 20px 0;
-}
-
-.couple-photo {
-    width: 80%;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.couple p {
-    font-size: 1.3em;
-    color: #7f8c8d;
-    margin-top: 20px;
-}
-
-/* Page Keempat: Ucapan dari Tetamu / RSVP */
-.rsvp {
-    background-color: #ffffff;
-    padding: 30px;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.rsvp h2 {
-    font-size: 2.5em;
-    color: #2c3e50;
-}
-
-.rsvp p {
-    font-size: 1.2em;
-    color: #7f8c8d;
-    margin-bottom: 20px;
-}
-
-.rsvp input, .rsvp textarea {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 1em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.rsvp button {
     background-color: #3498db;
     color: white;
-    padding: 10px 20px;
     font-size: 1.2em;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-.rsvp button:hover {
+button:hover {
     background-color: #2980b9;
 }
 
-/* Mobile-Friendly Adjustments */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5em;
-    }
-    .hero p {
-        font-size: 1.2em;
-    }
+.intro {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.invitation, .couple, .rsvp {
+    padding: 30px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.couple-images img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-countdown {
+    margin-top: 20px;
+}
+
+#countdown {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 20px;
 }
