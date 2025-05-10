@@ -87,3 +87,28 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Copy Button</title>
+</head>
+<body>
+
+<input type="text" value="Ini teks yang akan disalin" id="myInput">
+<button onclick="copyText()">Copy</button>
+
+<script>
+function copyText() {
+  const copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // Untuk mobile
+
+  navigator.clipboard.writeText(copyText.value)
+    .then(() => alert("Teks disalin: " + copyText.value))
+    .catch(err => alert("Gagal menyalin: " + err));
+}
+</script>
+
+</body>
+</html>
