@@ -1,45 +1,74 @@
-<!-- Page Kedua: Ucapan Jemputan & Maklumat Majlis -->
-<section class="invitation">
-    <h2>Selamat Datang ke Majlis Perkahwinan</h2>
-    <h3>John & Sarah</h3>
-    <p>Dengan penuh rasa syukur dan kebahagiaan, kami ingin menjemput anda untuk berkongsi kegembiraan pada hari bahagia kami.</p>
-    <ul>
-        <li><strong>Tarikh:</strong> 15 Mei 2025</li>
-        <li><strong>Masa:</strong> 10:00 AM</li>
-        <li><strong>Tempat:</strong> Dewan Majlis Perkahwinan, Kuala Lumpur</li>
-    </ul>
-</section>
+<!DOCTYPE html>
+<html lang="ms">
 
-<!-- Page Ketiga: Gambar Pasangan & Doa Untuk Pengantin -->
-<section class="couple">
-    <h2>Menanti Hari Bahagia</h2>
-    <div class="couple-images">
-        <img src="john-and-sarah.jpg" alt="John & Sarah" class="couple-photo" />
-    </div>
-    <p>Semoga John & Sarah diberkati dalam perjalanan hidup mereka. Semoga Allah memberkati perkahwinan ini dengan kebahagiaan, kedamaian, dan keberkatan yang abadi. Amin.</p>
-</section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kad Digital Perkahwinan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<!-- Page Keempat: Ucapan dari Tetamu / RSVP -->
-<section class="rsvp">
-    <h2>Konfirmasi Kehadiran</h2>
-    <p>Terima kasih kerana datang! Sila tinggalkan ucapan atau konfirmasi kehadiran anda di sini:</p>
-    <form action="https://formspree.io/f/syamisyafiy@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Nama Anda" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea name="message" placeholder="Ucapan untuk Pengantin" rows="4" required></textarea>
-        <button type="submit">Kirim</button>
-    </form>
-</section>
+<body>
+    <!-- Main Page: Countdown & Lagu Latar -->
+    <section class="intro">
+        <h1>Selamat Datang ke Kad Digital Perkahwinan</h1>
+        <div id="countdown"></div>
+        <audio id="background-music" autoplay loop>
+            <source src="background-music.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
 
-<!-- Footer: RSVP, Nombor Telefon, Lokasi -->
-<footer>
-    <div class="footer-content">
-        <a href="#rsvp">RSVP</a>
-        <p><strong>Telefon:</strong> +60 123 456 789</p>
-        <p><strong>Lokasi:</strong> Dewan Majlis Perkahwinan, Kuala Lumpur</p>
-        <a href="https://wa.me/60123456789" target="_blank" class="whatsapp">Hubungi di WhatsApp</a>
-    </div>
-    <div class="footer-countdown">
-        <p>Majlis Perkahwinan Bermula Dalam: <span id="footer-countdown"></span></p>
-    </div>
-</footer>
+    <!-- Page Kedua: Ucapan Jemputan & Maklumat Majlis -->
+    <section class="invitation">
+        <h2>Bismillah... Assalamualaikum</h2>
+        <p>Dengan segala hormatnya, kami ingin menjemput anda untuk hadir ke Majlis Perkahwinan:</p>
+        <h3>John & Sarah</h3>
+        <p>Tarikh: Sabtu, 1 Juni 2025</p>
+        <p>Waktu: 10:00 AM</p>
+        <p>Tempat: Dewan Majlis Perkahwinan, Kuala Lumpur</p>
+        <p>Jadual Majlis:</p>
+        <ul>
+            <li>10:00 AM - Ketibaan Tetamu</li>
+            <li>11:00 AM - Sesi Akad Nikah</li>
+            <li>12:30 PM - Jamuan Makan</li>
+        </ul>
+    </section>
+
+    <!-- Page Ketiga: Gambar Pasangan & Doa Untuk Pengantin -->
+    <section class="couple">
+        <h2>Menanti Hari Bahagia</h2>
+        <div class="couple-images">
+            <img src="john-and-sarah.jpg" alt="John & Sarah" class="couple-photo" />
+        </div>
+        <p>Semoga John & Sarah diberkati dalam perjalanan hidup mereka. Semoga Allah memberkati perkahwinan ini dengan kebahagiaan, kedamaian, dan keberkatan yang abadi. Amin.</p>
+    </section>
+
+    <!-- Page Keempat: Ucapan dari Tetamu / RSVP -->
+    <section class="rsvp">
+        <h2>Konfirmasi Kehadiran</h2>
+        <form action="https://formspree.io/f/syamisyafiy@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Nama Anda" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea name="message" placeholder="Ucapan untuk Pengantin" rows="4" required></textarea>
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+    <!-- Footer: RSVP, Nombor Telefon, Lokasi -->
+    <footer>
+        <div class="footer-content">
+            <a href="#rsvp">RSVP</a>
+            <p><strong>Telefon:</strong> +60 123 456 789</p>
+            <p><strong>Lokasi:</strong> Dewan Majlis Perkahwinan, Kuala Lumpur</p>
+            <a href="https://wa.me/60123456789" target="_blank" class="whatsapp">Hubungi di WhatsApp</a>
+        </div>
+        <div class="footer-countdown">
+            <p>Majlis Perkahwinan Bermula Dalam: <span id="footer-countdown"></span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
