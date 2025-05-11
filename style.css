@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap');
 
 body {
-  font-family: 'Playfair Display', serif; /* Elegant and easy-to-read font */
+  font-family: 'Playfair Display', serif; /* Elegant font */
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom right, #fff0f6, #ffe4e1); /* Soft gradient for a calming effect */
-  color: #333; /* Elegant dark text */
+  background: linear-gradient(to bottom right, #fff0f6, #ffe4e1); /* Soft gradient */
+  color: #333; /* Soft, readable text */
   scroll-behavior: smooth;
 }
 
@@ -21,29 +21,55 @@ body {
 .page {
   min-height: 100vh;
   width: 100%;
-  padding: 3rem; /* Larger padding for space */
+  padding: 3rem;
   box-sizing: border-box;
   scroll-snap-align: start;
   text-align: center;
   background: white;
-  border-bottom: 1px solid #ccc; /* Subtle border for separation */
+  border-bottom: 1px solid #ccc;
   opacity: 1;
   transition: opacity 1s ease-in-out;
   line-height: 1.8; /* Relaxed line height for easy reading */
 }
 
-.page .front-page {
+/* Front Page Styling */
+.front-page {
   background: url('gambar kahwin.jpg') no-repeat center center/cover;
   color: #fff;
 }
 
+h1, h2, p {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #555;
+}
+
+h2 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-top: 1.5rem;
+  color: #d36b7d;
+}
+
+.bold-beautiful {
+  font-weight: bold;
+  font-family: 'Roboto Slab', serif;
+  color: #d36b7d;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+
 /* Countdown and footer countdown */
 #countdown, #footer-countdown {
-  font-size: 1.6rem; /* Slightly larger font */
+  font-size: 1.6rem;
   margin-top: 1rem;
-  font-family: 'Roboto Slab', serif; /* Elegant, serif font */
-  font-weight: 400; /* Light weight for readability */
-  color: #d36b7d; /* Soft accent color */
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  color: #d36b7d;
 }
 
 /* Button styling */
@@ -60,7 +86,7 @@ button {
   letter-spacing: 1px;
   margin-top: 1.5rem;
   transition: background-color 0.3s ease;
-  border: 2px solid #d36b7d; /* Button border for an elegant look */
+  border: 2px solid #d36b7d;
 }
 
 button:hover {
@@ -74,10 +100,10 @@ form {
   gap: 15px;
   max-width: 450px;
   margin: auto;
-  background: rgba(255, 255, 255, 0.85); /* Light and airy background */
+  background: rgba(255, 255, 255, 0.85);
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 input, textarea {
@@ -89,49 +115,8 @@ input, textarea {
   line-height: 1.6;
 }
 
-/* Word-by-word fade-in animation applied to page elements */
-.page h1, .page h2, .page h3, .page p {
-  display: inline-block;
-}
-
-.page h1 span.word, .page h2 span.word, .page h3 span.word, .page p span.word {
-  opacity: 0;
-  display: inline-block;
-  animation: fadeInWord 0.6s forwards;
-}
-
-@keyframes fadeInWord {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Specific word styles for emphasis */
-.bold-beautiful {
-  font-weight: bold;
-  font-family: 'Roboto Slab', serif;
-  color: #d36b7d; /* Elegant accent color */
-  text-transform: uppercase;
-  font-size: 1.3em;
-  letter-spacing: 1px;
-  margin: 10px 0;
-}
-
-/* Fade-in animation for page elements */
+/* Fade-in animation */
 .page {
-  min-height: 100vh;
-  width: 100%;
-  padding: 3rem;
-  box-sizing: border-box;
-  scroll-snap-align: start;
-  text-align: center;
-  background: white;
-  border-bottom: 1px solid #ccc;
   opacity: 0;
   animation: fadeIn 2s forwards;
 }
@@ -140,21 +125,4 @@ input, textarea {
   to {
     opacity: 1;
   }
-}
-
-/* Elegant Heading and Paragraph Styling */
-h1, p {
-  font-family: 'Playfair Display', serif;
-  font-weight: 400;
-  line-height: 1.8; /* Relaxed line height for easy reading */
-  color: #555; /* Softer gray color */
-  margin-bottom: 1.5rem;
-}
-
-h2 {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 700;
-  font-size: 2.2rem;
-  margin-top: 1.5rem;
-  color: #d36b7d; /* Elegant accent color */
 }
