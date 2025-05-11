@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 5000);
 });
 
-// Word-by-word animation inside .page
+// Word-by-word animation inside .pag
 document.querySelectorAll('.page').forEach((page, index) => {
   const nodes = Array.from(page.childNodes);
   nodes.forEach((node) => {
