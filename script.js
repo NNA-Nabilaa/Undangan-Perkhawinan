@@ -27,6 +27,13 @@ function countdown(targetDate, elementId) {
 countdown("May 31, 2025 11:00:00", "countdown");
 countdown("May 31, 2025 11:00:00", "footer-countdown");
 
+function flipToNext() {
+  document.querySelector('.flipbook').scrollBy({
+    left: window.innerWidth,
+    behavior: 'smooth'
+  });
+}
+
 // Autoplay BGM after interaction
 document.addEventListener("DOMContentLoaded", () => {
   const bgm = document.getElementById("bgm");
