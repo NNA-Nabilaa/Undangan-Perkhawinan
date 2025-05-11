@@ -7,9 +7,19 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <audio id="bgm" autoplay loop>
+  <audio id="bgm" loop>
     <source src="Hafiz Suip - Kisah Cinta Kita (Lyrics).mp3" type="audio/mpeg" />
   </audio>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const bgm = document.getElementById('bgm');
+      bgm.play().catch(() => {
+      // If autoplay fails, wait for first interaction
+        document.body.addEventListener('click', () => bgm.play(), { once: true });
+      });
+    });
+  </script>
 
   <div class="flipbook">
     <!-- Muka Hadapan -->
@@ -21,7 +31,6 @@
       <p>Masjid Jamek Tanjong Malim</p>
       <p>#liyaterciptauntukhaikal</p>
       <div id="countdown"></div>
-      <button onclick="flipToNext()">Buka Kad</button>
     </section>
 
     <!-- Muka Kedua -->
