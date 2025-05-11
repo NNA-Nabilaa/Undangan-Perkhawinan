@@ -1,67 +1,95 @@
+/* Elegant font family */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap');
+
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Playfair Display', serif; /* Elegant and easy-to-read font */
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom right, #fff0f6, #ffe4e1);
-  color: #333;
+  background: linear-gradient(to bottom right, #fff0f6, #ffe4e1); /* Soft gradient for a calming effect */
+  color: #333; /* Elegant dark text */
   scroll-behavior: smooth;
 }
 
+/* Flipbook container */
 .flipbook {
   display: block;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
 }
 
+/* Elegant Page Layout */
 .page {
   min-height: 100vh;
   width: 100%;
-  padding: 2rem;
+  padding: 3rem; /* Larger padding for space */
   box-sizing: border-box;
   scroll-snap-align: start;
   text-align: center;
   background: white;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; /* Subtle border for separation */
   opacity: 1;
+  transition: opacity 1s ease-in-out;
+  line-height: 1.8; /* Relaxed line height for easy reading */
 }
 
-.front-page {
+.page .front-page {
   background: url('gambar kahwin.jpg') no-repeat center center/cover;
   color: #fff;
 }
 
+/* Countdown and footer countdown */
 #countdown, #footer-countdown {
-  font-size: 1.5rem;
+  font-size: 1.6rem; /* Slightly larger font */
   margin-top: 1rem;
+  font-family: 'Roboto Slab', serif; /* Elegant, serif font */
+  font-weight: 400; /* Light weight for readability */
+  color: #d36b7d; /* Soft accent color */
 }
 
+/* Button styling */
 button {
   background-color: #d36b7d;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  font-size: 1rem;
-  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-family: 'Roboto Slab', serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease;
+  border: 2px solid #d36b7d; /* Button border for an elegant look */
 }
 
+button:hover {
+  background-color: #c04e6b;
+}
+
+/* Form styling */
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: 400px;
+  gap: 15px;
+  max-width: 450px;
   margin: auto;
+  background: rgba(255, 255, 255, 0.85); /* Light and airy background */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
 input, textarea {
-  padding: 10px;
-  font-size: 1rem;
+  padding: 12px;
+  font-size: 1.1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
+  font-family: 'Roboto Slab', serif;
+  line-height: 1.6;
 }
 
-/* Word-by-word fade-in animation applied only to specific elements */
+/* Word-by-word fade-in animation applied to page elements */
 .page h1, .page h2, .page h3, .page p {
   display: inline-block;
 }
@@ -83,33 +111,22 @@ input, textarea {
   }
 }
 
-/* Import elegant font */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap');
-
-body {
-  font-family: 'Playfair Display', serif; /* Elegant font */
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom right, #fff0f6, #ffe4e1);
-  color: #333;
-  scroll-behavior: smooth;
-}
-
-/* Specific word styles */
+/* Specific word styles for emphasis */
 .bold-beautiful {
   font-weight: bold;
-  font-family: 'Roboto Slab', serif; /* Bold and beautiful font */
-  color: #d36b7d; /* Elegant color for emphasis */
-  text-transform: uppercase; /* Optional: Make the text uppercase */
-  font-size: 1.2em; /* Slightly larger for emphasis */
-  letter-spacing: 1px; /* Adds spacing for more elegance */
+  font-family: 'Roboto Slab', serif;
+  color: #d36b7d; /* Elegant accent color */
+  text-transform: uppercase;
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  margin: 10px 0;
 }
 
-/* Page styles */
+/* Fade-in animation for page elements */
 .page {
   min-height: 100vh;
   width: 100%;
-  padding: 2rem;
+  padding: 3rem;
   box-sizing: border-box;
   scroll-snap-align: start;
   text-align: center;
@@ -119,19 +136,25 @@ body {
   animation: fadeIn 2s forwards;
 }
 
-/* Fade-in animation */
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
 
-/* For specific bold words in the content */
+/* Elegant Heading and Paragraph Styling */
 h1, p {
   font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  line-height: 1.8; /* Relaxed line height for easy reading */
+  color: #555; /* Softer gray color */
+  margin-bottom: 1.5rem;
 }
 
 h2 {
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
+  font-size: 2.2rem;
+  margin-top: 1.5rem;
+  color: #d36b7d; /* Elegant accent color */
 }
