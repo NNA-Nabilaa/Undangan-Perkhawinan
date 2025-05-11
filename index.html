@@ -1,107 +1,99 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Walimatulurus Abu & Sarah</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <audio id="bgm" autoplay loop>
-    <source src="Hafiz Suip - Kisah Cinta Kita (Lyrics).mp3" type="audio/mpeg" />
+
+  <!-- Background Music -->
+  <audio id="bg-music" loop>
+    <source src="your-music.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
   </audio>
 
   <div class="flipbook">
-    <!-- Muka Hadapan -->
+
+    <!-- Front Page -->
     <section class="page front-page">
-      <h1>Walimatulurus</h1>
-      <p>Haikal & Liya</p>
-      <p>Sabtu, 31 Mei 2025<p>
-      <p>11.00 am - 5.00 pm</p>
-      <p>Masjid Jamek Tanjong Malim</p>
-      <p>#liyaterciptauntukhaikal<p>
-      <div id="countdown"></div>
-      <button onclick="flipToNext()">Buka Kad</button>
+      <h1>Majlis Perkahwinan</h1>
+      <h2>Syah & Aisyah</h2>
+      <p>11 November 2025</p>
+      <div id="countdown">Loading countdown...</div>
+      <button id="start-btn">Buka Jemputan</button>
     </section>
 
-    <!-- Muka Kedua -->
+    <!-- Page 2 -->
     <section class="page">
-      <h2>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
-      <p>Dengan penuh kesyukuran ke hadrat ilahi, kami</p>
-      <p>Zulkefli Bin Abdullah & Fazilah Binti Ahmad Manaf</p>
-      <p>menjemput yang berbahagia<p>
-      <p>Dato’/ Datin/ Tuan/ Puan/ Encik/ Cik<p>
-      <p>seisi keluarga untuk hadir<p>
-      <p>ke Majlis Perkahwinan putera kami<p>
-      <p>Muhammad Haikal Bin Zulkefli<p>
-      <p>dengan pilihan hatinya<p>
-      <p>Nurul Ilyana Binti Ilyas<p>
+      <h2>Assalamualaikum & Salam Sejahtera</h2>
+      <p>Dengan penuh kesyukuran, kami ingin menjemput anda ke majlis perkahwinan kami.</p>
     </section>
 
-    <!-- Muka Ketiga -->
+    <!-- Page 3 -->
     <section class="page">
-      <p>PADA<p>
-      <p>Sabtu, 31 Mei 2025<p>
-      <p>(Bersamaan 3 Zulhijjah 1446H)<p>
-      <p>BERTEMPAT DI<p>
-      <p>Masjid Jamek Tanjong Malim</p>
-      <p>ATURCARA MAJLIS<p>
-      <p>Jamuan Makan : 11.00 am - 5.00 pm<p>
-      <p>Ketibaan Pengantin : 1.00 pm<p>
+      <h2>Butiran Majlis</h2>
+      <p><strong>Tarikh:</strong> 11 November 2025</p>
+      <p><strong>Masa:</strong> 11:00 pagi - 4:00 petang</p>
+      <p><strong>Lokasi:</strong> Dewan Seri Melati, Shah Alam</p>
     </section>
 
-    <!-- Muka Keempat -->
+    <!-- Page 4 -->
     <section class="page">
-      <h2>Menanti Hari Bahagia</h2>
-      <img src="pasangan.jpeg" alt="Pasangan" class="pasangan-img" />
-      <h2>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
-      <p>Ya Allah Ya Tuhan kami, Kami memohon kepada-Mu berkatilah perkahwinan ini.</p>
-       </p>Limpahkanlah rahmat dan baraqah kepada kedua pasangan ini,</p>
-       </p>Kurniakanlah mereka zuriat yang soleh dan solehah,</p>
-       </p>Sempurnakan agama mereka dengan berkat ikatan ini dan semoga jodoh pernikahan ini akan berkekalan hingga ke jannah.</p>
-       </p>Aamiin Ya Rabbal Alamin..</p>
+      <h2>Pasangan Pengantin</h2>
+      <img src="pasangan.jpeg" alt="Pasangan Pengantin" class="pasangan-img">
     </section>
 
-    <!-- Muka Akhir -->
+    <!-- Page 5 -->
     <section class="page">
-      <h2>Tulis Ucapan</h2>
-      <form action="https://formsubmit.co/syamisyafiy@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_redirect" value="https://nna-nabilaa.github.io/NNA-Store/">
-        <input type="text" name="Nama" placeholder="Nama Anda" required />
-        <input type="jumlah hadir" name="Jumlah Hadir" placeholder="Jumlah Hadir" required />
-        <textarea name="Ucapan" placeholder="Ucapan Anda" required></textarea>
+      <div class="card">
+        <h2>Sumbangan Duit Salam</h2>
+        <p>Jika ingin menyumbang secara digital, imbas kod QR di bawah.</p>
+        <img src="qr-code.jpeg" alt="Kod QR">
+      </div>
+    </section>
+
+    <!-- Page 6 -->
+    <section class="page">
+      <h2>Sila RSVP Kehadiran Anda</h2>
+      <form>
+        <input type="text" placeholder="Nama Penuh" required>
+        <input type="number" placeholder="Bilangan Kehadiran" required>
+        <textarea placeholder="Ucapan kepada pengantin" rows="4"></textarea>
         <button type="submit">Hantar</button>
       </form>
     </section>
-  </div>
 
-  <h1>Money Gift</h1>
-  <div class="card">
-    <img src="qr-code.jpeg" alt="QR Code">
-    <p><strong>Nombor Akaun:</strong> <span id="account">0123 4567 9012 3456</span></p>
-    <p><strong>Nama:</strong> Ahmad Faizal Bin Muhammad Zahid</p>
-    <p><strong>Bank:</strong> Maybank</p>
-    <button class="copy-btn" onclick="copyText()">Salin Nombor Akaun</button>
+    <!-- Footer -->
+    <footer class="page">
+      <p>Terima kasih kerana sudi meraikan hari bahagia kami.</p>
+      <div id="footer-countdown"></div>
+    </footer>
+
   </div>
 
   <script>
-    function copyText() {
-      const text = document.getElementById("account").innerText;
-      navigator.clipboard.writeText(text)
-        .then(() => alert("Nombor akaun disalin!"))
-        .catch(err => alert("Gagal salin teks."));
+    const startBtn = document.getElementById('start-btn');
+    const music = document.getElementById('bg-music');
+
+    function startInvitation() {
+      // Play music
+      music.play().catch(e => console.log("Music autoplay blocked"));
+
+      // Auto scroll to next page
+      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
     }
 
-  <!-- Footer -->
-  <footer>
-    <p><strong>Whatsapp:</strong> 019-8566553</p>
-    <a href="https://wa.me/60198566553" target="_blank">Untuk Dihubungi</a>
-    <p><strong>Lokasi:</strong> Masjid Jamek Tanjong Malim</p>
-    <div id="footer-countdown"></div>
-  </footer>
+    // Button click to start invitation
+    startBtn.addEventListener('click', startInvitation);
 
-  <script src="script.js"></script>
+    // Touch anywhere to start music (for mobile autoplay policy)
+    document.body.addEventListener('touchstart', function once() {
+      music.play().catch(() => {});
+      document.body.removeEventListener('touchstart', once);
+    });
+  </script>
+
 </body>
 </html>
