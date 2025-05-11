@@ -11,6 +11,8 @@
     <source src="Hafiz Suip - Kisah Cinta Kita (Lyrics).mp3" type="audio/mpeg" />
   </audio>
 
+  <button id="startBtn">Start</button>
+
   <script>
     // Countdown Function
     function countdown(targetDate, elementId) {
@@ -41,20 +43,17 @@
     countdown("May 31, 2025 11:00:00", "countdown");
     countdown("May 31, 2025 11:00:00", "footer-countdown");
 
-    // Autoplay BGM after interaction
-    document.addEventListener("DOMContentLoaded", () => {
+    // Autoplay BGM after user interaction
+    document.getElementById('startBtn').addEventListener('click', () => {
       const bgm = document.getElementById("bgm");
-
-      const enableAudio = () => {
-        bgm.play().catch(() => {});
-        document.removeEventListener("click", enableAudio);
-      };
-
-      document.addEventListener("click", enableAudio);
+      bgm.play().catch(() => {});
+      document.getElementById('startBtn').style.display = 'none';  // Hide the start button
+      startAutoScroll();  // Start auto-scrolling
+      fadeInText();  // Trigger text fade-in effect
     });
 
     // Auto-scroll to next page every 8 seconds (horizontal flipbook)
-    document.addEventListener("DOMContentLoaded", () => {
+    function startAutoScroll() {
       const flipbook = document.querySelector('.flipbook');
       const pages = document.querySelectorAll('.page');
       let currentPage = 0;
@@ -63,62 +62,72 @@
         currentPage = (currentPage + 1) % pages.length;
         pages[currentPage].scrollIntoView({ behavior: 'smooth', inline: 'start' });
       }, 8000);
-    });
+    }
+
+    // Fade in effect for words
+    function fadeInText() {
+      const elements = document.querySelectorAll('.fade-in');
+      elements.forEach((el, index) => {
+        setTimeout(() => {
+          el.classList.add('visible');
+        }, index * 500);  // Delay between each fade-in
+      });
+    }
   </script>
 
   <div class="flipbook">
     <!-- Muka Hadapan -->
     <section class="page front-page">
-      <h1>Walimatulurus</h1>
-      <p>Haikal & Liya</p>
-      <p>Sabtu, 31 Mei 2025</p>
-      <p>11.00 am - 5.00 pm</p>
-      <p>Masjid Jamek Tanjong Malim</p>
-      <p>#liyaterciptauntukhaikal</p>
-      <div id="countdown"></div>
+      <h1 class="fade-in">Walimatulurus</h1>
+      <p class="fade-in">Haikal & Liya</p>
+      <p class="fade-in">Sabtu, 31 Mei 2025</p>
+      <p class="fade-in">11.00 am - 5.00 pm</p>
+      <p class="fade-in">Masjid Jamek Tanjong Malim</p>
+      <p class="fade-in">#liyaterciptauntukhaikal</p>
+      <div id="countdown" class="fade-in"></div>
     </section>
 
     <!-- Muka Kedua -->
     <section class="page">
-      <h2>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
-      <p>Dengan penuh kesyukuran ke hadrat ilahi, kami</p>
-      <p>Zulkefli Bin Abdullah & Fazilah Binti Ahmad Manaf</p>
-      <p>menjemput yang berbahagia</p>
-      <p>Dato’/ Datin/ Tuan/ Puan/ Encik/ Cik</p>
-      <p>seisi keluarga untuk hadir</p>
-      <p>ke Majlis Perkahwinan putera kami</p>
-      <p>Muhammad Haikal Bin Zulkefli</p>
-      <p>dengan pilihan hatinya</p>
-      <p>Nurul Ilyana Binti Ilyas</p>
+      <h2 class="fade-in">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
+      <p class="fade-in">Dengan penuh kesyukuran ke hadrat ilahi, kami</p>
+      <p class="fade-in">Zulkefli Bin Abdullah & Fazilah Binti Ahmad Manaf</p>
+      <p class="fade-in">menjemput yang berbahagia</p>
+      <p class="fade-in">Dato’/ Datin/ Tuan/ Puan/ Encik/ Cik</p>
+      <p class="fade-in">seisi keluarga untuk hadir</p>
+      <p class="fade-in">ke Majlis Perkahwinan putera kami</p>
+      <p class="fade-in">Muhammad Haikal Bin Zulkefli</p>
+      <p class="fade-in">dengan pilihan hatinya</p>
+      <p class="fade-in">Nurul Ilyana Binti Ilyas</p>
     </section>
 
     <!-- Muka Ketiga -->
     <section class="page">
-      <p>PADA</p>
-      <p>Sabtu, 31 Mei 2025</p>
-      <p>(Bersamaan 3 Zulhijjah 1446H)</p>
-      <p>BERTEMPAT DI</p>
-      <p>Masjid Jamek Tanjong Malim</p>
-      <p>ATURCARA MAJLIS</p>
-      <p>Jamuan Makan : 11.00 am - 5.00 pm</p>
-      <p>Ketibaan Pengantin : 1.00 pm</p>
+      <p class="fade-in">PADA</p>
+      <p class="fade-in">Sabtu, 31 Mei 2025</p>
+      <p class="fade-in">(Bersamaan 3 Zulhijjah 1446H)</p>
+      <p class="fade-in">BERTEMPAT DI</p>
+      <p class="fade-in">Masjid Jamek Tanjong Malim</p>
+      <p class="fade-in">ATURCARA MAJLIS</p>
+      <p class="fade-in">Jamuan Makan : 11.00 am - 5.00 pm</p>
+      <p class="fade-in">Ketibaan Pengantin : 1.00 pm</p>
     </section>
 
     <!-- Muka Keempat -->
     <section class="page">
-      <h2>Menanti Hari Bahagia</h2>
-      <img src="pasangan.jpeg" alt="Pasangan" class="pasangan-img" />
-      <h2>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
-      <p>Ya Allah Ya Tuhan kami, Kami memohon kepada-Mu berkatilah perkahwinan ini.</p>
-      <p>Limpahkanlah rahmat dan baraqah kepada kedua pasangan ini,</p>
-      <p>Kurniakanlah mereka zuriat yang soleh dan solehah,</p>
-      <p>Sempurnakan agama mereka dengan berkat ikatan ini dan semoga jodoh pernikahan ini akan berkekalan hingga ke jannah.</p>
-      <p>Aamiin Ya Rabbal Alamin..</p>
+      <h2 class="fade-in">Menanti Hari Bahagia</h2>
+      <img src="pasangan.jpeg" alt="Pasangan" class="pasangan-img fade-in" />
+      <h2 class="fade-in">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
+      <p class="fade-in">Ya Allah Ya Tuhan kami, Kami memohon kepada-Mu berkatilah perkahwinan ini.</p>
+      <p class="fade-in">Limpahkanlah rahmat dan baraqah kepada kedua pasangan ini,</p>
+      <p class="fade-in">Kurniakanlah mereka zuriat yang soleh dan solehah,</p>
+      <p class="fade-in">Sempurnakan agama mereka dengan berkat ikatan ini dan semoga jodoh pernikahan ini akan berkekalan hingga ke jannah.</p>
+      <p class="fade-in">Aamiin Ya Rabbal Alamin..</p>
     </section>
 
     <!-- Muka Akhir -->
     <section class="page">
-      <h2>Tulis Ucapan</h2>
+      <h2 class="fade-in">Tulis Ucapan</h2>
       <form action="https://formsubmit.co/syahmisyafiy@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_redirect" value="https://nna-nabilaa.github.io/NNA-Store/">
@@ -135,7 +144,7 @@
     <p><strong>Whatsapp:</strong> 019-8566553</p>
     <a href="https://wa.me/60198566553" target="_blank">Untuk Dihubungi</a>
     <p><strong>Lokasi:</strong> Masjid Jamek Tanjong Malim</p>
-    <div id="footer-countdown"></div>
+    <div id="footer-countdown" class="fade-in"></div>
   </footer>
 </body>
 </html>
