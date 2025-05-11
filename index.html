@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Walimatulurus Haikal & Liya</title>
+  <title>Walimatulurus Abu & Sarah</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,15 +12,57 @@
   </audio>
 
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const bgm = document.getElementById('bgm');
+    // Countdown Function
+    function countdown(targetDate, elementId) {
+      const countDownDate = new Date(targetDate).getTime();
 
-      // Wait for first user interaction
+      const update = () => {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        if (distance < 0) {
+          document.getElementById(elementId).innerHTML = "Hari Bahagia Telah Tiba!";
+          return;
+        }
+
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById(elementId).innerHTML = `${d}h ${h}j ${m}m ${s}s`;
+      };
+
+      update();
+      setInterval(update, 1000);
+    }
+
+    // Start both countdowns
+    countdown("May 31, 2025 11:00:00", "countdown");
+    countdown("May 31, 2025 11:00:00", "footer-countdown");
+
+    // Autoplay BGM after interaction
+    document.addEventListener("DOMContentLoaded", () => {
+      const bgm = document.getElementById("bgm");
+
       const enableAudio = () => {
         bgm.play().catch(() => {});
-        document.body.removeEventListener('click', enableAudio);
+        document.removeEventListener("click", enableAudio);
       };
-      document.body.addEventListener('click', enableAudio);
+
+      document.addEventListener("click", enableAudio);
+    });
+
+    // Auto-scroll to next page every 8 seconds (horizontal flipbook)
+    document.addEventListener("DOMContentLoaded", () => {
+      const flipbook = document.querySelector('.flipbook');
+      const pages = document.querySelectorAll('.page');
+      let currentPage = 0;
+
+      setInterval(() => {
+        currentPage = (currentPage + 1) % pages.length;
+        pages[currentPage].scrollIntoView({ behavior: 'smooth', inline: 'start' });
+      }, 8000);
     });
   </script>
 
@@ -83,7 +125,7 @@
         <input type="text" name="Nama" placeholder="Nama Anda" required />
         <input type="text" name="Jumlah Hadir" placeholder="Jumlah Hadir" required />
         <textarea name="Ucapan" placeholder="Ucapan Anda" required></textarea>
-        <button type="submit">Hantarr</button>
+        <button type="submit">Hantar</button>
       </form>
     </section>
   </div>
@@ -95,7 +137,5 @@
     <p><strong>Lokasi:</strong> Masjid Jamek Tanjong Malim</p>
     <div id="footer-countdown"></div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
