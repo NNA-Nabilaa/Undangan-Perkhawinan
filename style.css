@@ -73,12 +73,19 @@ footer {
   margin: 1rem 0;
 }
 
-/* Add styles for the audio player visibility */
 audio {
   display: none;
 }
 
-/* Transition for flipbook auto-scrolling */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
 .flipbook {
   scroll-behavior: smooth;
 }
