@@ -77,6 +77,17 @@
         <p>Imbas kod QR di bawah</p>
         <img src="qr-code.jpeg" alt="Kod QR">
         <h2>Terima kasih atas pemberian!</h2>
+
+          <script>
+    function copyRek() {
+      const text = document.getElementById("rek").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Nomor akaun bank telah disalin");
+      });
+    }
+  </script>
+</body>
+</html>
       </div>
     </section>
 
