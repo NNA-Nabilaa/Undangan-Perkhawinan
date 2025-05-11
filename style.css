@@ -22,8 +22,7 @@ body {
   text-align: center;
   background: white;
   border-bottom: 1px solid #ccc;
-  opacity: 0;
-  animation: fadeIn 2s forwards;
+  opacity: 1; /* changed from 0 to 1 */
 }
 
 .front-page {
@@ -62,16 +61,7 @@ input, textarea {
   border-radius: 8px;
 }
 
-.fade-text {
-  opacity: 0;
-  animation: fadeIn 3s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
+/* Word-by-word fade-in */
 .page span.word {
   opacity: 0;
   display: inline-block;
@@ -79,9 +69,12 @@ input, textarea {
 }
 
 @keyframes fadeInWord {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
