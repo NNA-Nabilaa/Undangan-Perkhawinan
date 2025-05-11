@@ -92,30 +92,6 @@
     </section>
 
     <!-- Page 6 -->
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>Money Gift</title>
-</head>
-<body>
-  <h2>Terima kasih atas pemberian!</h2>
-      <p><strong>Nama Bank :</strong> Maybank Berhad</p>
-  <p>Nombor Akaun: <span id="rek">1234567890</span></p>
-  <button onclick="copyRek()">Copy</button>
-
-  <script>
-    function copyRek() {
-      const text = document.getElementById("rek").innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Nomor akaun bank telah disalin");
-      });
-    }
-  </script>
-</body>
-</html>
-
-
-    <!-- Page 7 -->
     <section class="page">
       <h2>GUESTBOOK</h2>
         <textarea placeholder="Ucapan kepada pengantin" rows="4"></textarea>
