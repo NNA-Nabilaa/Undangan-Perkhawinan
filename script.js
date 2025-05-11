@@ -16,7 +16,7 @@ function countdown(targetDate, elementId) {
     const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const s = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById(elementId).innerHTML = `${d}h ${h}j ${m}m ${s}s`;
+    document.getElementById(elementId).innerHTML = ${d}h ${h}j ${m}m ${s}s;
   };
 
   update();
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const span = document.createElement("span");
           span.className = "word";
           span.textContent = word + " ";
-          span.style.animationDelay = `${i * 0.2}s`;
+          span.style.animationDelay = ${i * 0.2}s;
           fragment.appendChild(span);
         });
         element.replaceChild(fragment, node);
