@@ -4,22 +4,24 @@ body {
   padding: 0;
   background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
   color: #333;
+  scroll-behavior: smooth;
 }
 
 .flipbook {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  display: block;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
 }
 
 .page {
-  min-width: 100vw;
+  min-height: 100vh;
+  width: 100%;
   padding: 2rem;
   box-sizing: border-box;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   text-align: center;
   background: white;
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 .front-page {
@@ -62,5 +64,4 @@ footer {
   text-align: center;
   padding: 1rem;
   background: #f8f8f8;
-  position: relative;
 }
