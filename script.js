@@ -50,3 +50,23 @@ document.addEventListener("DOMContentLoaded", () => {
     pages[currentPage].scrollIntoView({ behavior: 'smooth', inline: 'start' });
   }, 5000);
 });
+
+// Word-by-word animation inside .page
+document.querySelectorAll('.page').forEach((page, index) => {
+  const nodes = Array.from(page.childNodes);
+  nodes.forEach((node) => {
+    if (node.nodeType === 3 && node.textContent.trim().length > 0) {
+      const words = node.textContent.trim().split(/\s+/);
+      const spanWords = words.map((word, i) => {
+        const span = document.createElement('span');
+        span.className = 'word';
+        span.style.animationDelay = `${i * 0.2}s`;
+        span.textContent = word + ' ';
+        return span;
+      });
+      const wrapper = document.createElement('span');
+      spanWords.forEach(w => wrapper.appendChild(w));
+      page.replaceChild(wrapper, node);
+    }
+  });
+});
