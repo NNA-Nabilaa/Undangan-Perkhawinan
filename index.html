@@ -1,144 +1,91 @@
-body {
-  font-family: 'Playfair Display', serif; /* Elegant font for the entire body */
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom right, #fff0f6, #ffe4e1);
-  color: #333;
-  scroll-behavior: smooth;
-}
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Walimatulurus Abu & Sarah</title>
+  <!-- Link to Google Fonts for elegant fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="bgm" autoplay loop>
+    <source src="Hafiz Suip - Kisah Cinta Kita (Lyrics).mp3" type="audio/mpeg" />
+  </audio>
 
-.flipbook {
-  display: block;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-}
+  <div class="flipbook">
+    <!-- Muka Hadapan -->
+    <section class="page front-page">
+      <h1>Walimatulurus</h1>
+      <p>Haikal & Liya</p>
+      <p>Sabtu, 31 Mei 2025</p>
+      <p>11.00 am - 5.00 pm</p>
+      <p>Masjid Jamek Tanjong Malim</p>
+      <p>#liyaterciptauntukhaikal</p>
+      <div id="countdown"></div>
+      <button onclick="flipToNext()">Buka Kad</button>
+    </section>
 
-.page {
-  min-height: 100vh;
-  width: 100%;
-  padding: 2rem;
-  box-sizing: border-box;
-  scroll-snap-align: start;
-  text-align: center;
-  background: white;
-  border-bottom: 1px solid #ccc;
-  opacity: 1;
-}
+    <!-- Muka Kedua -->
+    <section class="page">
+      <h2>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
+      <p>Dengan penuh kesyukuran ke hadrat ilahi, kami</p>
+      <p>Zulkefli Bin Abdullah & Fazilah Binti Ahmad Manaf</p>
+      <p>menjemput yang berbahagia</p>
+      <p>Dato’/ Datin/ Tuan/ Puan/ Encik/ Cik</p>
+      <p>seisi keluarga untuk hadir</p>
+      <p>ke Majlis Perkahwinan putera kami</p>
+      <p>Muhammad Haikal Bin Zulkefli</p>
+      <p>dengan pilihan hatinya</p>
+      <p>Nurul Ilyana Binti Ilyas</p>
+    </section>
 
-.front-page {
-  background: url('gambar kahwin.jpg') no-repeat center center/cover;
-  color: #fff;
-}
+    <!-- Muka Ketiga -->
+    <section class="page">
+      <p><span class="bold-beautiful">PADA</span></p>
+      <p>Sabtu, 31 Mei 2025</p>
+      <p>(Bersamaan 3 Zulhijjah 1446H)</p>
+      <p><span class="bold-beautiful">BERTEMPAT DI</span></p>
+      <p>Masjid Jamek Tanjong Malim</p>
+      <p><span class="bold-beautiful">ATURCARA MAJLIS</span></p>
+      <p>Jamuan Makan : 11.00 am - 5.00 pm</p>
+      <p>Ketibaan Pengantin : 1.00 pm</p>
+    </section>
 
-#countdown, #footer-countdown {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-}
+    <!-- Muka Keempat -->
+    <section class="page">
+      <h2>Menanti Hari Bahagia</h2>
+      <img src="pasangan.jpeg" alt="Pasangan" class="pasangan-img" />
+      <h2>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
+      <p>Ya Allah Ya Tuhan kami, Kami memohon kepada-Mu berkatilah perkahwinan ini.</p>
+      <p>Limpahkanlah rahmat dan baraqah kepada kedua pasangan ini,</p>
+      <p>Kurniakanlah mereka zuriat yang soleh dan solehah,</p>
+      <p>Sempurnakan agama mereka dengan berkat ikatan ini dan semoga jodoh pernikahan ini akan berkekalan hingga ke jannah.</p>
+      <p>Aamiin Ya Rabbal Alamin..</p>
+    </section>
 
-button {
-  background-color: #d36b7d;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-top: 1rem;
-}
+    <!-- Muka Akhir -->
+    <section class="page">
+      <h2>Tulis Ucapan</h2>
+      <form action="https://formsubmit.co/syamisyafiy@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_redirect" value="https://nna-nabilaa.github.io/NNA-Store/">
+        <input type="text" name="Nama" placeholder="Nama Anda" required />
+        <input type="jumlah hadir" name="Jumlah Hadir" placeholder="Jumlah Hadir" required />
+        <textarea name="Ucapan" placeholder="Ucapan Anda" required></textarea>
+        <button type="submit">Hantar</button>
+      </form>
+    </section>
+  </div>
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 400px;
-  margin: auto;
-}
+  <!-- Footer -->
+  <footer>
+    <p><strong>RSVP:</strong> 019-8566553</p>
+    <a href="https://wa.me/60198566553" target="_blank">Untuk Dihubungi</a>
+    <p><strong>Lokasi:</strong> Masjid Jamek Tanjong Malim</p>
+    <div id="footer-countdown"></div>
+  </footer>
 
-input, textarea {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-/* Word-by-word fade-in animation applied only to specific elements */
-.page h1, .page h2, .page h3, .page p {
-  display: inline-block;
-}
-
-.page h1 span.word, .page h2 span.word, .page h3 span.word, .page p span.word {
-  opacity: 0;
-  display: inline-block;
-  animation: fadeInWord 0.6s forwards;
-}
-
-@keyframes fadeInWord {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Specific word styles */
-.bold-beautiful {
-  font-weight: bold;
-  font-family: 'Roboto Slab', serif; /* Bold and beautiful font */
-  color: #d36b7d; /* Elegant color for emphasis */
-  text-transform: uppercase; /* Optional: Make the text uppercase */
-  font-size: 1.2em; /* Slightly larger for emphasis */
-  letter-spacing: 1px; /* Adds spacing for more elegance */
-}
-
-/* Style for specific words like "PADA", "BERTEMPAT DI", and "ATURCARA MAJLIS" */
-.bold-pada {
-  font-weight: bold;
-  font-family: 'Playfair Display', serif;
-  color: #d36b7d;
-}
-
-.bold-bertempat {
-  font-weight: bold;
-  font-family: 'Playfair Display', serif;
-  color: #d36b7d;
-}
-
-.bold-aturcara {
-  font-weight: bold;
-  font-family: 'Playfair Display', serif;
-  color: #d36b7d;
-}
-
-/* Page styles */
-.page {
-  min-height: 100vh;
-  width: 100%;
-  padding: 2rem;
-  box-sizing: border-box;
-  scroll-snap-align: start;
-  text-align: center;
-  background: white;
-  border-bottom: 1px solid #ccc;
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* For specific bold words in the content */
-h1, p {
-  font-family: 'Playfair Display', serif;
-}
-
-h2 {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 700;
-}
+  <script src="script.js"></script>
+</body>
+</html>
