@@ -1,3 +1,4 @@
+// Countdown Function
 function countdown(targetDate, elementId) {
   const countDownDate = new Date(targetDate).getTime();
 
@@ -15,20 +16,37 @@ function countdown(targetDate, elementId) {
     const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const s = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById(elementId).innerHTML =
-      `${d}h ${h}j ${m}m ${s}s`;
+    document.getElementById(elementId).innerHTML = `${d}h ${h}j ${m}m ${s}s`;
   };
 
   update();
   setInterval(update, 1000);
 }
 
+// Start both countdowns
 countdown("May 31, 2025 11:00:00", "countdown");
 countdown("May 31, 2025 11:00:00", "footer-countdown");
 
-function flipToNext() {
-  document.querySelector('.flipbook').scrollBy({
-    left: window.innerWidth,
-    behavior: 'smooth'
-  });
-}
+// Autoplay BGM after interaction
+document.addEventListener("DOMContentLoaded", () => {
+  const bgm = document.getElementById("bgm");
+
+  const enableAudio = () => {
+    bgm.play().catch(() => {});
+    document.removeEventListener("click", enableAudio);
+  };
+
+  document.addEventListener("click", enableAudio);
+});
+
+// Auto-scroll to next page every 8 seconds (horizontal flipbook)
+document.addEventListener("DOMContentLoaded", () => {
+  const flipbook = document.querySelector('.flipbook');
+  const pages = document.querySelectorAll('.page');
+  let currentPage = 0;
+
+  setInterval(() => {
+    currentPage = (currentPage + 1) % pages.length;
+    pages[currentPage].scrollIntoView({ behavior: 'smooth', inline: 'start' });
+  }, 5000);
+});
