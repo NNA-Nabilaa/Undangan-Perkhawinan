@@ -61,15 +61,12 @@
       setInterval(() => {
         currentPage = (currentPage + 1) % pages.length;
         pages[currentPage].scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 8000);
+      }, 8000); // Change this interval to control how often the scroll happens
     }
 
-    // Start auto-scrolling after start button is clicked
+    // Start auto-scrolling when the page is loaded
     document.addEventListener("DOMContentLoaded", () => {
-      const startButton = document.getElementById("start-btn");
-      startButton.addEventListener("click", () => {
-        autoScrollPages();
-      });
+      autoScrollPages();
     });
   </script>
 
@@ -144,8 +141,5 @@
     <p><strong>Lokasi:</strong> Masjid Jamek Tanjong Malim</p>
     <div id="footer-countdown" class="fade-text"></div>
   </footer>
-
-  <!-- Start Button -->
-  <button id="start-btn" class="start-btn">Start Event</button>
 </body>
 </html>
