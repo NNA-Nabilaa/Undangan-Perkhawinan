@@ -51,10 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 5000);
 });
 
-// Fade in each word one-by-one per page
+// Fade in each word one-by-one per page for specific elements
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".page").forEach((page) => {
-    page.childNodes.forEach((node) => {
+  document.querySelectorAll(".page h1, .page h2, .page h3, .page p").forEach((element) => {
+    const textNodes = element.childNodes;
+    
+    textNodes.forEach((node) => {
       if (node.nodeType === 3 && node.textContent.trim() !== "") {
         const words = node.textContent.trim().split(/\s+/);
         const fragment = document.createDocumentFragment();
@@ -65,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
           span.style.animationDelay = `${i * 0.2}s`;
           fragment.appendChild(span);
         });
-        page.replaceChild(fragment, node);
+        element.replaceChild(fragment, node);
       }
     });
   });
