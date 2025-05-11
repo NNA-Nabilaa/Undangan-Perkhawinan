@@ -1,106 +1,123 @@
 /* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #f9f9f9, #ffe5ec);
   margin: 0;
   padding: 0;
+  background: linear-gradient(to bottom right, #fff0f6, #ffe4e1);
   color: #333;
+  scroll-behavior: smooth;
   text-align: center;
 }
 
-h1, h2, p {
-  margin: 10px 0;
-}
-
+/* Flipbook Container */
 .flipbook {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
+  display: block;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
 }
 
+/* Each Page Section */
 .page {
-  margin-bottom: 50px;
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  background: #ffffff;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Front Page Style */
+.front-page {
+  background: url('gambar kahwin.jpg') no-repeat center center/cover;
+  color: #fff;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3);
+}
+
+/* Countdown Styles */
+#countdown, #footer-countdown {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* Button Styles */
 button {
-  background-color: #e75480;
+  background-color: #d36b7d;
   color: white;
+  padding: 10px 25px;
   border: none;
-  padding: 12px 25px;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 12px;
   cursor: pointer;
-  margin-top: 15px;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #d14572;
+  background-color: #b9586b;
 }
 
-#countdown,
-#footer-countdown {
-  font-size: 24px;
-  margin-top: 15px;
-  color: #e75480;
-}
-
+/* Form Styling */
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-input[type="text"],
-input[type="jumlah hadir"],
-textarea {
-  width: 80%;
+  gap: 10px;
   max-width: 400px;
+  margin: 0 auto;
+}
+
+input, textarea {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 1rem;
 }
 
-textarea {
-  height: 100px;
-  resize: none;
-}
-
-.card {
-  margin: 40px auto;
-  padding: 20px;
-  background: white;
+/* Couple Image */
+.pasangan-img {
+  max-width: 100%;
+  height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 500px;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Money Gift Card */
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 400px;
+  text-align: center;
 }
 
 .card img {
   width: 200px;
-  height: auto;
-  margin-bottom: 15px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
+/* Footer Styling */
 footer {
-  background: #f4f4f4;
-  padding: 20px;
-  margin-top: 50px;
+  background: #f8f8f8;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  border-top: 1px solid #ddd;
 }
 
-footer p, footer a {
-  margin: 5px 0;
-  font-size: 16px;
-  color: #555;
-}
-
-footer a {
-  text-decoration: none;
-  color: #e75480;
-  font-weight: bold;
+/* Responsive Text Centering */
+.page p,
+.page h1,
+.page h2 {
+  margin: 0.5rem 0;
+  line-height: 1.6;
 }
