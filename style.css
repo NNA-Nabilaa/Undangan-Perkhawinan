@@ -82,3 +82,56 @@ input, textarea {
     transform: translateY(0);
   }
 }
+
+/* Import elegant font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap');
+
+body {
+  font-family: 'Playfair Display', serif; /* Elegant font */
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #fff0f6, #ffe4e1);
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Specific word styles */
+.bold-beautiful {
+  font-weight: bold;
+  font-family: 'Roboto Slab', serif; /* Bold and beautiful font */
+  color: #d36b7d; /* Elegant color for emphasis */
+  text-transform: uppercase; /* Optional: Make the text uppercase */
+  font-size: 1.2em; /* Slightly larger for emphasis */
+  letter-spacing: 1px; /* Adds spacing for more elegance */
+}
+
+/* Page styles */
+.page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  text-align: center;
+  background: white;
+  border-bottom: 1px solid #ccc;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* For specific bold words in the content */
+h1, p {
+  font-family: 'Playfair Display', serif;
+}
+
+h2 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+}
