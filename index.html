@@ -71,7 +71,7 @@
     <section class="page">
       <div class="card">
         <h2>Money Gift</h2>
-        <p>Jika ingin menyumbang secara digital, imbas kod QR di bawah.</p>
+        <p>Imbas kod QR di bawah</p>
         <img src="qr-code.jpeg" alt="Kod QR">
       </div>
     </section>
@@ -85,14 +85,14 @@
 <body>
   <h2>Terima kasih atas pemberian!</h2>
       <p><strong>Nama Bank :</strong> Maybank Berhad</p>
-  <p>Nomor Akaun: <span id="rek">1234567890</span></p>
+  <p>Nombor Akaun: <span id="rek">1234567890</span></p>
   <button onclick="copyRek()">Copy</button>
 
   <script>
     function copyRek() {
       const text = document.getElementById("rek").innerText;
       navigator.clipboard.writeText(text).then(() => {
-        alert("Nomor rekening telah disalin!");
+        alert("Nomor akaun bank telah disalin");
       });
     }
   </script>
