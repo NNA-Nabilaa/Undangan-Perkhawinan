@@ -105,25 +105,6 @@ body {
   letter-spacing: 1px; /* Adds spacing for more elegance */
 }
 
-/* Style for specific words like "PADA", "BERTEMPAT DI", and "ATURCARA MAJLIS" */
-.bold-pada {
-  font-weight: bold;
-  font-family: 'Playfair Display', serif;
-  color: #d36b7d;
-}
-
-.bold-bertempat {
-  font-weight: bold;
-  font-family: 'Playfair Display', serif;
-  color: #d36b7d;
-}
-
-.bold-aturcara {
-  font-weight: bold;
-  font-family: 'Playfair Display', serif;
-  color: #d36b7d;
-}
-
 /* Page styles */
 .page {
   min-height: 100vh;
