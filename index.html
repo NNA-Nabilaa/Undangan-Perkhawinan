@@ -14,9 +14,13 @@
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const bgm = document.getElementById('bgm');
-      bgm.play().catch(() => {
-        document.body.addEventListener('click', () => bgm.play(), { once: true });
-      });
+
+      // Wait for first user interaction
+      const enableAudio = () => {
+        bgm.play().catch(() => {});
+        document.body.removeEventListener('click', enableAudio);
+      };
+      document.body.addEventListener('click', enableAudio);
     });
   </script>
 
