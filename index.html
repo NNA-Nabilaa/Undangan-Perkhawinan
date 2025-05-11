@@ -10,33 +10,53 @@
 
   <!-- Background Music -->
   <audio id="bg-music" loop>
-    <source src="your-music.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
+    <source src="Hafiz Suip - Kisah Cinta Kita (Lyrics).mp3" type="audio/mpeg"/>
   </audio>
 
   <div class="flipbook">
 
     <!-- Front Page -->
     <section class="page front-page">
-      <h1>Majlis Perkahwinan</h1>
-      <h2>Syah & Aisyah</h2>
-      <p>11 November 2025</p>
+      <h1>Walimatuluru</h1>
+      <h2>Haikal & Liya</h2>
+      <p>Sabtu, 31 Mei 2025</p>
       <div id="countdown">Loading countdown...</div>
-      <button id="start-btn">Buka Jemputan</button>
+      <button id="start-btn">Buka</button>
     </section>
 
     <!-- Page 2 -->
     <section class="page">
-      <h2>Assalamualaikum & Salam Sejahtera</h2>
-      <p>Dengan penuh kesyukuran, kami ingin menjemput anda ke majlis perkahwinan kami.</p>
+      <h2>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
+      <p>Dengan penuh kesyukuran ke hadrat ilahi, kami</p>
+      <p>**Zulkefli Bin Abdullah & Fazilah Binti Ahmad Manaf**</p>
+      <p>menjemput yang berbahagia</p>
+      <p>Dato’/ Datin/ Tuan/ Puan/ Encik/ Cik</p>
+      <p>seisi keluarga untuk hadir</p>
+      <p>ke Majlis Perkahwinan putera kami</p>
+      <p>**Muhammad Haikal Bin Zulkefli**</p>
+      <p>dengan pilihan hatinya</p>
+      <p>**Nurul Ilyana Binti Ilyas**</p>
     </section>
 
     <!-- Page 3 -->
     <section class="page">
-      <h2>**Butiran Majlis**</h2>
-      <p><strong>**Tarikh:**</strong> 11 November 2025</p>
-      <p><strong>**Masa:**</strong> 11:00 pagi - 4:00 petang</p>
-      <p><strong>**Lokasi:**</strong> Dewan Seri Melati, Shah Alam</p>
+      <h2>Butiran Majlis</h2>
+      <p><strong>Tarikh:</strong>
+        11 November 2025</p>
+      <p><strong>Masa:</strong> 11:00 pagi - 4:00 petang</p>
+      <p><strong>Lokasi:</strong> Dewan Seri Melati, Shah Alam</p>
+    </section>
+
+    <!-- Page 3 -->
+    <section class="page">
+      <strong>PADA<strong>
+      <p>Sabtu, 31 Mei 2025</p>
+      <p>Bersamaan 3 Zulhijjah 1446H</p>
+      <strong>BERTEMPAT DI<strong>
+      <p>Masjid Jamek Tanjong Malim</p>
+      <strong>ATURCARA MAJLIS<strong>
+      <p><strong>Jamuan Makan :</strong> 11.00 am - 5.00 pm</p>
+      <p><strong>Ketibaan Pengantin : </strong> 1.00 pm</p>
     </section>
 
     <!-- Page 4 -->
@@ -48,7 +68,7 @@
     <!-- Page 5 -->
     <section class="page">
       <div class="card">
-        <h2>Sumbangan Duit Salam</h2>
+        <h2>Money Gift</h2>
         <p>Jika ingin menyumbang secara digital, imbas kod QR di bawah.</p>
         <img src="qr-code.jpeg" alt="Kod QR">
       </div>
@@ -58,11 +78,12 @@
     <!DOCTYPE html>
 <html>
 <head>
-  <title>Wedding Gift</title>
+  <title>Money Gift</title>
 </head>
 <body>
-  <h2>Terima kasih atas kadonya!</h2>
-  <p>Nomor Rekening: <span id="rek">1234567890</span></p>
+  <h2>Terima kasih atas pemberian!</h2>
+      <p><strong>Nama Bank :</strong> Maybank Berhad</p>
+  <p>Nomor Akaun: <span id="rek">1234567890</span></p>
   <button onclick="copyRek()">Copy</button>
 
   <script>
@@ -79,9 +100,17 @@
 
     <!-- Page 6 -->
     <section class="page">
-      <h2>Sila RSVP Kehadiran Anda</h2>
+      <h2>RSVP</h2>
       <form>
         <input type="text" placeholder="Nama Penuh" required>
+            <label>
+      <input type="radio" name="attendance" value="Hadir" required>
+      Hadir
+    </label>
+    <label>
+      <input type="radio" name="attendance" value="Tidak Hadir">
+      Tidak Hadir
+    </label><br><br>
         <input type="number" placeholder="Bilangan Kehadiran" required>
         <textarea placeholder="Ucapan kepada pengantin" rows="4"></textarea>
         <button type="submit">Hantar</button>
@@ -90,7 +119,7 @@
 
     <!-- Footer -->
     <footer class="page">
-      <p>Terima kasih kerana sudi meraikan hari bahagia kami.</p>
+      <p>Semoga dengan kehadiran para hadirin akan menyerikan lagi majlis ini</p>
       <div id="footer-countdown"></div>
     </footer>
 
