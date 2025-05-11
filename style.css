@@ -22,6 +22,8 @@ body {
   text-align: center;
   background: white;
   border-bottom: 1px solid #ccc;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
 }
 
 .front-page {
@@ -73,19 +75,33 @@ footer {
   margin: 1rem 0;
 }
 
+/* Add styles for the audio player visibility */
 audio {
   display: none;
 }
 
-.fade-in {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+/* Fade-In Effect */
+.fade-text {
+  animation: fadeIn 2s forwards;
 }
 
-.fade-in.visible {
-  opacity: 1;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.flipbook {
-  scroll-behavior: smooth;
+.start-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
