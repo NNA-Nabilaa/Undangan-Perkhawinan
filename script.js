@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", enableAudio);
 });
 
-// Auto-scroll to next page every 8 seconds (horizontal flipbook)
+// Auto-scroll to next page every 5 seconds
 document.addEventListener("DOMContentLoaded", () => {
   const flipbook = document.querySelector('.flipbook');
   const pages = document.querySelectorAll('.page');
@@ -51,22 +51,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 5000);
 });
 
-// Word-by-word animation inside .pag
-document.querySelectorAll('.page').forEach((page, index) => {
-  const nodes = Array.from(page.childNodes);
-  nodes.forEach((node) => {
-    if (node.nodeType === 3 && node.textContent.trim().length > 0) {
-      const words = node.textContent.trim().split(/\s+/);
-      const spanWords = words.map((word, i) => {
-        const span = document.createElement('span');
-        span.className = 'word';
-        span.style.animationDelay = `${i * 0.2}s`;
-        span.textContent = word + ' ';
-        return span;
-      });
-      const wrapper = document.createElement('span');
-      spanWords.forEach(w => wrapper.appendChild(w));
-      page.replaceChild(wrapper, node);
-    }
+// Fade in each word one-by-one per page
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".page").forEach((page) => {
+    page.childNodes.forEach((node) => {
+      if (node.nodeType === 3 && node.textContent.trim() !== "") {
+        const words = node.textContent.trim().split(/\s+/);
+        const fragment = document.createDocumentFragment();
+        words.forEach((word, i) => {
+          const span = document.createElement("span");
+          span.className = "word";
+          span.textContent = word + " ";
+          span.style.animationDelay = `${i * 0.2}s`;
+          fragment.appendChild(span);
+        });
+        page.replaceChild(fragment, node);
+      }
+    });
   });
 });
