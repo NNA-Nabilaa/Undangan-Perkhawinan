@@ -86,6 +86,23 @@
     <div id="footer-countdown"></div>
   </footer>
 
+  <h1>Money Gift</h1>
+  <div class="card">
+    <img src="qr-code.png" alt="QR Code">
+    <p><strong>Nombor Akaun:</strong> <span id="account">0123 4567 9012 3456</span></p>
+    <p><strong>Nama:</strong> Ahmad Faizal Bin Muhammad Zahid</p>
+    <p><strong>Bank:</strong> Maybank</p>
+    <button class="copy-btn" onclick="copyText()">Salin Nombor Akaun</button>
+  </div>
+
+  <script>
+    function copyText() {
+      const text = document.getElementById("account").innerText;
+      navigator.clipboard.writeText(text)
+        .then(() => alert("Nombor akaun disalin!"))
+        .catch(err => alert("Gagal salin teks."));
+    }
+
   <script src="script.js"></script>
 </body>
 </html>
