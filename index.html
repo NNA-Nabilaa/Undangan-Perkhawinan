@@ -4,15 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Walimatulurus Abu & Sarah</title>
-  <!-- Link to Google Fonts for elegant fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <audio id="bgm" autoplay loop>
     <source src="Hafiz Suip - Kisah Cinta Kita (Lyrics).mp3" type="audio/mpeg" />
   </audio>
-  
+
   <div class="flipbook">
     <!-- Muka Hadapan -->
     <section class="page front-page">
@@ -78,14 +76,6 @@
     </section>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <p><strong>RSVP:</strong> 019-8566553</p>
-    <a href="https://wa.me/60198566553" target="_blank">Untuk Dihubungi</a>
-    <p><strong>Lokasi:</strong> Masjid Jamek Tanjong Malim</p>
-    <div id="footer-countdown"></div>
-  </footer>
-
   <h1>Money Gift</h1>
   <div class="card">
     <img src="qr-code.png" alt="QR Code">
@@ -102,6 +92,14 @@
         .then(() => alert("Nombor akaun disalin!"))
         .catch(err => alert("Gagal salin teks."));
     }
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>RSVP:</strong> 019-8566553</p>
+    <a href="https://wa.me/60198566553" target="_blank">Untuk Dihubungi</a>
+    <p><strong>Lokasi:</strong> Masjid Jamek Tanjong Malim</p>
+    <div id="footer-countdown"></div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
