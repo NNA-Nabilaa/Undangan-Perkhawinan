@@ -55,6 +55,29 @@
     </section>
 
     <!-- Page 6 -->
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>Wedding Gift</title>
+</head>
+<body>
+  <h2>Terima kasih atas kadonya!</h2>
+  <p>Nomor Rekening: <span id="rek">1234567890</span></p>
+  <button onclick="copyRek()">Copy</button>
+
+  <script>
+    function copyRek() {
+      const text = document.getElementById("rek").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Nomor rekening telah disalin!");
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+    <!-- Page 6 -->
     <section class="page">
       <h2>Sila RSVP Kehadiran Anda</h2>
       <form>
