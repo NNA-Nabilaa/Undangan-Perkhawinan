@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Walimatulurus Abu & Sarah</title>
+  <title>Walimatulurus Haikal & Liya</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,7 +15,6 @@
     window.addEventListener('DOMContentLoaded', () => {
       const bgm = document.getElementById('bgm');
       bgm.play().catch(() => {
-      // If autoplay fails, wait for first interaction
         document.body.addEventListener('click', () => bgm.play(), { once: true });
       });
     });
