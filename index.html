@@ -11,8 +11,6 @@
     <source src="Hafiz Suip - Kisah Cinta Kita (Lyrics).mp3" type="audio/mpeg" />
   </audio>
 
-  <button id="startBtn">Start</button>
-
   <script>
     // Countdown Function
     function countdown(targetDate, elementId) {
@@ -43,91 +41,91 @@
     countdown("May 31, 2025 11:00:00", "countdown");
     countdown("May 31, 2025 11:00:00", "footer-countdown");
 
-    // Autoplay BGM after user interaction
-    document.getElementById('startBtn').addEventListener('click', () => {
+    // Autoplay BGM after click
+    document.addEventListener("DOMContentLoaded", () => {
       const bgm = document.getElementById("bgm");
-      bgm.play().catch(() => {});
-      document.getElementById('startBtn').style.display = 'none';  // Hide the start button
-      startAutoScroll();  // Start auto-scrolling
-      fadeInText();  // Trigger text fade-in effect
+      
+      const enableAudio = () => {
+        bgm.play().catch(() => {});
+        document.removeEventListener("click", enableAudio);
+      };
+
+      document.addEventListener("click", enableAudio);
     });
 
-    // Auto-scroll to next page every 8 seconds (horizontal flipbook)
-    function startAutoScroll() {
-      const flipbook = document.querySelector('.flipbook');
-      const pages = document.querySelectorAll('.page');
-      let currentPage = 0;
+    // Auto-scroll to next page every 8 seconds
+    let currentPage = 0;
 
+    function autoScrollPages() {
+      const pages = document.querySelectorAll('.page');
       setInterval(() => {
         currentPage = (currentPage + 1) % pages.length;
-        pages[currentPage].scrollIntoView({ behavior: 'smooth', inline: 'start' });
+        pages[currentPage].scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 8000);
     }
 
-    // Fade in effect for words
-    function fadeInText() {
-      const elements = document.querySelectorAll('.fade-in');
-      elements.forEach((el, index) => {
-        setTimeout(() => {
-          el.classList.add('visible');
-        }, index * 500);  // Delay between each fade-in
+    // Start auto-scrolling after start button is clicked
+    document.addEventListener("DOMContentLoaded", () => {
+      const startButton = document.getElementById("start-btn");
+      startButton.addEventListener("click", () => {
+        autoScrollPages();
       });
-    }
+    });
   </script>
 
   <div class="flipbook">
     <!-- Muka Hadapan -->
     <section class="page front-page">
-      <h1 class="fade-in">Walimatulurus</h1>
-      <p class="fade-in">Haikal & Liya</p>
-      <p class="fade-in">Sabtu, 31 Mei 2025</p>
-      <p class="fade-in">11.00 am - 5.00 pm</p>
-      <p class="fade-in">Masjid Jamek Tanjong Malim</p>
-      <p class="fade-in">#liyaterciptauntukhaikal</p>
-      <div id="countdown" class="fade-in"></div>
+      <h1 class="fade-text">Walimatulurus</h1>
+      <p class="fade-text">Haikal & Liya</p>
+      <p class="fade-text">Sabtu, 31 Mei 2025</p>
+      <p class="fade-text">11.00 am - 5.00 pm</p>
+      <p class="fade-text">Masjid Jamek Tanjong Malim</p>
+      <p class="fade-text">#liyaterciptauntukhaikal</p>
+      <div id="countdown" class="fade-text"></div>
     </section>
 
     <!-- Muka Kedua -->
     <section class="page">
-      <h2 class="fade-in">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
-      <p class="fade-in">Dengan penuh kesyukuran ke hadrat ilahi, kami</p>
-      <p class="fade-in">Zulkefli Bin Abdullah & Fazilah Binti Ahmad Manaf</p>
-      <p class="fade-in">menjemput yang berbahagia</p>
-      <p class="fade-in">Dato’/ Datin/ Tuan/ Puan/ Encik/ Cik</p>
-      <p class="fade-in">seisi keluarga untuk hadir</p>
-      <p class="fade-in">ke Majlis Perkahwinan putera kami</p>
-      <p class="fade-in">Muhammad Haikal Bin Zulkefli</p>
-      <p class="fade-in">dengan pilihan hatinya</p>
-      <p class="fade-in">Nurul Ilyana Binti Ilyas</p>
+      <h2 class="fade-text">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
+      <p class="fade-text">Dengan penuh kesyukuran ke hadrat ilahi, kami</p>
+      <p class="fade-text">Zulkefli Bin Abdullah & Fazilah Binti Ahmad Manaf</p>
+      <p class="fade-text">menjemput yang berbahagia</p>
+      <p class="fade-text">Dato’/ Datin/ Tuan/ Puan/ Encik/ Cik</p>
+      <p class="fade-text">seisi keluarga untuk hadir</p>
+      <p class="fade-text">ke Majlis Perkahwinan putera kami</p>
+      <p class="fade-text">Muhammad Haikal Bin Zulkefli</p>
+      <p class="fade-text">dengan pilihan hatinya</p>
+      <p class="fade-text">Nurul Ilyana Binti Ilyas</p>
     </section>
 
     <!-- Muka Ketiga -->
     <section class="page">
-      <p class="fade-in">PADA</p>
-      <p class="fade-in">Sabtu, 31 Mei 2025</p>
-      <p class="fade-in">(Bersamaan 3 Zulhijjah 1446H)</p>
-      <p class="fade-in">BERTEMPAT DI</p>
-      <p class="fade-in">Masjid Jamek Tanjong Malim</p>
-      <p class="fade-in">ATURCARA MAJLIS</p>
-      <p class="fade-in">Jamuan Makan : 11.00 am - 5.00 pm</p>
-      <p class="fade-in">Ketibaan Pengantin : 1.00 pm</p>
+      <p class="fade-text">PADA</p>
+      <p class="fade-text">Sabtu, 31 Mei 2025</p>
+      <p class="fade-text">(Bersamaan 3 Zulhijjah 1446H)</p>
+      <p class="fade-text">BERTEMPAT DI</p>
+      <p class="fade-text">Masjid Jamek Tanjong Malim</p>
+      <p class="fade-text">ATURCARA MAJLIS</p>
+      <p class="fade-text">Jamuan Makan : 11.00 am - 5.00 pm</p>
+      <p class="fade-text">Ketibaan Pengantin : 1.00 pm</p>
     </section>
 
     <!-- Muka Keempat -->
     <section class="page">
-      <h2 class="fade-in">Menanti Hari Bahagia</h2>
-      <img src="pasangan.jpeg" alt="Pasangan" class="pasangan-img fade-in" />
-      <h2 class="fade-in">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
-      <p class="fade-in">Ya Allah Ya Tuhan kami, Kami memohon kepada-Mu berkatilah perkahwinan ini.</p>
-      <p class="fade-in">Limpahkanlah rahmat dan baraqah kepada kedua pasangan ini,</p>
-      <p class="fade-in">Kurniakanlah mereka zuriat yang soleh dan solehah,</p>
-      <p class="fade-in">Sempurnakan agama mereka dengan berkat ikatan ini dan semoga jodoh pernikahan ini akan berkekalan hingga ke jannah.</p>
-      <p class="fade-in">Aamiin Ya Rabbal Alamin..</p>
+      <h2 class="fade-text">Menanti Hari Bahagia</h2>
+      <img src="pasangan.jpeg" alt="Pasangan" class="pasangan-img" />
+      <h2 class="fade-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
+      <p class="fade-text">Ya Allah Ya Tuhan kami, Kami memohon kepada-Mu berkatilah perkahwinan ini.</p>
+      <p class="fade-text">Limpahkanlah rahmat dan baraqah kepada kedua pasangan ini,</p>
+      <p class="fade-text">Kurniakanlah mereka zuriat yang soleh dan solehah,</p>
+      <p class="fade-text">Sempurnakan agama mereka dengan berkat ikatan ini dan semoga jodoh pernikahan ini akan berkekalan hingga ke jannah.</p>
+      <p class="fade-text">Aamiin Ya Rabbal Alamin..</p>
     </section>
 
     <!-- Muka Akhir -->
     <section class="page">
-      <h2 class="fade-in">Tulis Ucapan</h2>
+      <h2 class="fade-text">Tulis Ucapan</h2>
       <form action="https://formsubmit.co/syahmisyafiy@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_redirect" value="https://nna-nabilaa.github.io/NNA-Store/">
@@ -144,7 +142,10 @@
     <p><strong>Whatsapp:</strong> 019-8566553</p>
     <a href="https://wa.me/60198566553" target="_blank">Untuk Dihubungi</a>
     <p><strong>Lokasi:</strong> Masjid Jamek Tanjong Malim</p>
-    <div id="footer-countdown" class="fade-in"></div>
+    <div id="footer-countdown" class="fade-text"></div>
   </footer>
+
+  <!-- Start Button -->
+  <button id="start-btn" class="start-btn">Start Event</button>
 </body>
 </html>
