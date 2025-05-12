@@ -202,6 +202,26 @@
   }
 </style>
 
+        
+<!-- Button untuk Contact -->
+<button onclick="showContact()">Contact</button>
+
+<!-- Senarai nombor telefon tersembunyi -->
+<div id="contact-info" style="display: none; margin-top: 10px;">
+  <p><strong>Phone 1:</strong> <a href="tel:+60198813267">+60 19-8813267</a></p>
+  <p><strong>Phone 2:</strong> <a href="tel:+601157265723">+60 11-57265723</a></p>
+</div>
+
+<script>
+function showContact() {
+  var contactDiv = document.getElementById("contact-info");
+  if (contactDiv.style.display === "none") {
+    contactDiv.style.display = "block";
+  } else {
+    contactDiv.style.display = "none";
+  }
+}
+</script>
       
     <!-- Footer -->
     <footer class="page">
