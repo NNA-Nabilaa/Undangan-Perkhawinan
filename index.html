@@ -307,10 +307,6 @@
 
 
 
-
-
-
-  
   
   <script>
     const startBtn = document.getElementById('start-btn');
@@ -339,8 +335,7 @@
 
 
 
-    
-
+      <!-- footer -->
   <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -446,53 +441,5 @@
     <iframe 
       src="https://maps.app.goo.gl/KYZcM4NcTKrCdBi78?g_st=aw
 
-
-
-
-
-
-
-
-  <section id="rsvp" class="section" style="display:none;">
-    <h2>RSVP</h2>
-    <form>
-      <input type="text" placeholder="Nama" required /><br />
-      <input type="tel" placeholder="Nombor Telefon" required /><br />
-      <button type="submit">Hantar</button>
-    </form>
-  </section>
-
-  <section id="wishlist" class="section" style="display:none;">
-    <h2>Wishlist</h2>
-    <p>Sila pilih hadiah di Shopee dan maklumkan kami.</p>
-    <a href="https://shopee.com.my" target="_blank">Link Shopee</a>
-  </section>
-</main>
-
-<div class="fixed-footer">
-  <button onclick="showSection('info')" title="Maklumat"><i class="fas fa-info-circle"></i></button>
-  <button onclick="showSection('rsvp')" title="RSVP"><i class="fas fa-envelope"></i></button>
-  <button onclick="showSection('wishlist')" title="Wishlist"><i class="fas fa-gift"></i></button>
-</div>
-
-<script>
-  const bgMusic = document.getElementById('bgMusic');
-  document.getElementById('openBtn').addEventListener('click', () => {
-    document.getElementById('front').style.display = 'none';
-    document.getElementById('mainContent').style.display = 'block';
-    bgMusic.play().catch(e => console.log('Autoplay prevented'));
-  });
-
-  function showSection(id) {
-    const sections = document.querySelectorAll('main > section');
-    sections.forEach(section => {
-      section.style.display = (section.id === id) ? 'block' : 'none';
-    });
-    document.getElementById(id).scrollIntoView({behavior:'smooth'});
-  }
-</script>
-
-</body>
-</html>
 
   
