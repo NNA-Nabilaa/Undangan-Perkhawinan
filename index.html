@@ -90,14 +90,82 @@
     
     <!-- Page 6 -->
     <section class="page">
-     <img src="https://via.placeholder.com/100" alt="#liyaterciptauntukhaikal">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e1e;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-    <div class="countdown-box">
-      <div id="dayBox" class="flip-box">0<span>Hari</span></div>
-      <div id="hourBox" class="flip-box">0<span>Jam</span></div>
-      <div id="minBox" class="flip-box">0<span>Minit</span></div>
-    </div>
-    </section>
+    .countdown-box {
+      background-color: #333;
+      padding: 20px 40px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .countdown-box h1 {
+      margin-bottom: 20px;
+    }
+
+    .time {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="countdown-box">
+    <h1>Countdown ke Tarikh Penting</h1>
+    <div class="time" id="countdown"></div>
+  </div>
+
+  <script>
+    // Tetapkan tarikh sasaran (contoh: 31 Disember 2025, jam 23:59:59)
+    const targetDate = new Date("2025-12-31T23:59:59").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("countdown").innerHTML = "Masa Tamat!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `${days} hari ${hours} jam ${minutes} minit ${seconds} saat`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
+
 
 
  <!-- Page 7 -->
