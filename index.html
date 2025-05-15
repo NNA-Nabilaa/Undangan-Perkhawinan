@@ -90,11 +90,6 @@
     
     <!-- Page 6 -->
     <section class="page">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Countdown Flip Box</title>
   <style>
     body {
@@ -225,132 +220,9 @@
 </html>
 
       
-    <!-- Page 7 -->
-    <section class="page">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Countdown Box Span</title>
-  <style>
-    body {
-      background: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .countdown-box {
-      background: #222;
-      padding: 20px 40px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    }
-
-    .label {
-      font-size: 14px;
-      margin-top: 10px;
-      color: #aaa;
-    }
-
-    .time-section {
-      display: inline-block;
-      margin: 0 10px;
-    }
-
-    .digit {
-      font-size: 2.5em;
-      font-weight: bold;
-      background: #333;
-      padding: 10px 14px;
-      border-radius: 8px;
-      margin: 0 2px;
-      display: inline-block;
-      transition: transform 0.2s ease;
-    }
-
-    .digit.updated {
-      transform: scale(1.1);
-    }
-  </style>
-</head>
-<body>
-  <div class="countdown-box">
-    <div class="time-section">
-      <div id="days"></div>
-      <div class="label">Hari</div>
-    </div>
-    <div class="time-section">
-      <div id="hours"></div>
-      <div class="label">Jam</div>
-    </div>
-    <div class="time-section">
-      <div id="minutes"></div>
-      <div class="label">Minit</div>
-    </div>
-    <div class="time-section">
-      <div id="seconds"></div>
-      <div class="label">Saat</div>
-    </div>
-  </div>
-
-  <script>
-    const targetDate = new Date("2025-06-01T11:30:30").getTime();
-
-    function pad(n) {
-      return n < 10 ? '0' + n : n.toString();
-    }
-
-    function updateDigits(containerId, value) {
-      const container = document.getElementById(containerId);
-      const str = pad(value);
-      container.innerHTML = '';
-
-      for (let i = 0; i < str.length; i++) {
-        const span = document.createElement('span');
-        span.className = 'digit updated';
-        span.textContent = str[i];
-        container.appendChild(span);
-
-        // Remove 'updated' after animation
-        setTimeout(() => span.classList.remove('updated'), 200);
-      }
-    }
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const diff = targetDate - now;
-
-      if (diff <= 0) {
-        ['days', 'hours', 'minutes', 'seconds'].forEach(id => updateDigits(id, 0));
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      updateDigits('days', days);
-      updateDigits('hours', hours);
-      updateDigits('minutes', minutes);
-      updateDigits('seconds', seconds);
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-</body>
-</html>
 
 
- <!-- Page 8 -->
+ <!-- Page 7 -->
 <!DOCTYPE html>
 <html lang="ms">
 <head>
