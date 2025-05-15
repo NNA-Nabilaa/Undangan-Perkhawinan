@@ -242,11 +242,24 @@
   </nav>
 
   <!-- Seksyen RSVP -->
-  <section id="rsvp">
-    <h2>RSVP</h2>
-    <p>Sila sahkan kehadiran anda melalui borang di bawah:</p>
-    <a class="button" href="https://forms.gle/wZ5qbCTw4FN3oXTx9" target="_blank">Isi Borang RSVP</a>
-  </section>
+      <section id="rsvp" class="active">
+<h2>RSVP</h2>
+      <form>
+        <input type="text" placeholder="Nama Anda" required>
+            <label>
+      <input type="radio" name="attendance" value="Hadir" required>
+      Hadir
+    </label>
+    <label>
+      <input type="radio" name="attendance" value="Tidak Hadir">
+      Tidak Hadir
+    </label><br><br>
+        <label for="jumlah">Bilangan Kehadiran</label><br>
+  <input type="number" id="jumlah" name="jumlah" min="1"><br><br>
+
+        <button type="submit">Hantar</button>
+      </form>
+    </section>
 
   <!-- Seksyen Money Gift -->
   <section id="moneygift">
@@ -427,4 +440,14 @@ Link: ${item.link}
   </a>
 </footer>
 
-  
+   <!-- JS Countdown + Muzik -->
+  <script>
+    const weddingDate = new Date("2025-12-25T00:00:00").getTime();
+
+    function startCountdown() {
+      setInterval(() => {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        const days = Math.floor(distance / (1000
+ 
