@@ -79,3 +79,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+
+
+
+document.getElementById('openBtn').addEventListener('click', () => {
+  document.getElementById('front').style.display = 'none';
+  document.getElementById('mainContent').style.display = 'block';
+  const music = document.getElementById('bgMusic');
+  music.play().catch(() => console.log("Autoplay blocked"));
+});
+
+function showSection(id) {
+  const sections = document.querySelectorAll('main > section');
+  sections.forEach(section => {
+    section.style.display = (section.id === id) ? 'block' : 'none';
+  });
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
