@@ -392,4 +392,50 @@
 </body>
 </html>
 
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Halaman Utama</title>
+  <!-- Gaya CSS untuk menyembunyikan halaman rahsia -->
+  <style>
+    #hiddenPage {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Butang untuk memaparkan atau menyembunyikan halaman rahsia -->
+  <button id="toggleButton">Tekan Saya</button>
+  
+  <!-- Elemen yang akan muncul bila butang ditekan -->
+  <div id="hiddenPage">
+    <h1>Selamat Datang ke Halaman Rahsia!</h1>
+    <p>Ini adalah kandungan yang tersembunyi sehingga anda menekan butang.</p>
+  </div>
+  
+  <!-- Skrip JavaScript untuk mengawal paparan halaman rahsia -->
+  <script>
+    // Pilih butang dan elemen yang ingin dikawal
+    const toggleButton = document.getElementById("toggleButton");
+    const hiddenPage = document.getElementById("hiddenPage");
+
+    // Fungsi untuk menukar paparan elemen
+    toggleButton.addEventListener("click", function() {
+      // Jika elemen tersembunyi, papar ia; jika sudah paparan, sembunyikannya
+      if (hiddenPage.style.display === "none" || hiddenPage.style.display === "") {
+        hiddenPage.style.display = "block";
+      } else {
+        hiddenPage.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
+
   
